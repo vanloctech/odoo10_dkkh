@@ -1,0 +1,6 @@
+<odoo>
+    <menuitem
+            id="rom"
+            name="ROM"
+            web_icon="rom_base,static/description/icon.png"/>
+</odoo>

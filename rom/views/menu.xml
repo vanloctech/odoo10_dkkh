@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <act_window
+            id="action_rom"
+            name="Registration of marriage"
+            res_model="rom.dkkh"
+            view_mode="tree,form"
+    />
+
+    <menuitem
+            id = "menu_rom"
+            name="Registration of marriage"
+            parent = "rom_base.rom"
+            action = "action_rom"
+            web_icon="prs_report_canlamsang,static/description/icon.png"/>
+</odoo>

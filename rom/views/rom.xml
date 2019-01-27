@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="rom_tree" model="ir.ui.view">
+        <field name="name">rom_tree</field>
+        <field name="model">rom.dkkh</field>
+        <field name="arch" type="xml">
+            <tree string="Registration of marriage">
+                <field name="hoTenChong"></field>
+                <field name="hoTenVo"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="rom_form" model="ir.ui.view">
+        <field name="name">rom_form</field>
+        <field name="model">rom.dkkh</field>
+        <field name="arch" type="xml">
+            <form string="Registration of marriage">
+                <group colspan="4">
+                    <group colspan="4" col="4">
+                        <group colspan="2" col="2">
+                            <separator string="ỦY BAN NHÂN DÂN" colspan="2"/>
+                            <field name="ubndXa"/>
+                            <field name="ubndHuyen"/>
+                            <field name="ubndTinh"/>
+                        </group>
+                        <group colspan="2" col="2">
+                            <separator string="SỐ GIẤY ĐKKH" colspan="2"/>
+                            <field name="so"/>
+                            <field name="quyenSo"/>
+                        </group>
+                    </group>
+
+                    <group colspan="4" col="4">
+                        <separator string="THÔNG TIN ĐĂNG KÝ KẾT HÔN" colspan="4"/>
+                        <group colspan="2" col="2">
+                            <field name="hoTenChong"/>
+                            <field name="nSChong"/>
+                            <!--<field name=""></field>-->
+                        </group>
+                        <group colspan="2" col="2">
+                            <field name="hoTenVo"/>
+                            <field name="nSVo"/>
+                        </group>
+                    </group>
+
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!--<record id="prs_report_canlamsang_search" model="ir.ui.view">-->
+    <!--<field name="name">prs_report_canlamsang_search</field>-->
+    <!--<field name="model">prs.report.canlamsang</field>-->
+    <!--<field name="arch" type="xml">-->
+    <!--<search string="Báo cáo số liệu hoạt động cận lâm sàng">-->
+    <!--<field name="name"/>-->
+    <!--</search>-->
+    <!--</field>-->
+    <!--</record>-->
+
+    <!--<record id="prs_report_canlamsang_form" model="ir.ui.view">-->
+    <!--<field name="name">prs_report_canlamsang_form</field>-->
+    <!--<field name="model">prs.report.canlamsang</field>-->
+    <!--<field name="arch" type="xml">-->
+    <!--<form string="Báo cáo số liệu hoạt động cận lâm sàng">-->
+    <!--<header>-->
+    <!--<button name="action_draft" states="confirmed" type="object" string="Reset to Draft"/>-->
+    <!--<button name="action_confirm" states="draft" type="object" string="Confirm"/>-->
+    <!--<button name="print_report" string="Print Report"  type="object"  states="confirmed"/>-->
+    <!--<field name="state" widget="statusbar" statusbar_visible="draft,confirmed"/>-->
+    <!--</header>-->
+    <!--<sheet>-->
+    <!--<group >-->
+    <!--<group string="Số người">-->
+    <!--<field name="so_nguoi_nu" attrs="{'readonly':[('state','!=','draft')]}" />-->
+    <!--<field name="so_nguoi_cbcnv" attrs="{'readonly':[('state','!=','draft')]}" />-->
+    <!--<field name="so_nguoi_nhan_dan" attrs="{'readonly':[('state','!=','draft')]}" />-->
+    <!--<field name="so_nguoi_tre_em" attrs="{'readonly':[('state','!=','draft')]}" />-->
+    <!--<field name="tong_so_nguoi" attrs="{'readonly':[('state','!=','draft')]}" />-->
+    <!--</group>-->
+    <!--<group string="Số lần">-->
+    <!--<field name="so_lan_nu" attrs="{'readonly':[('state','!=','draft')]}" />-->
+    <!--<field name="so_lan_cbcnv" attrs="{'readonly':[('state','!=','draft')]}" />-->
+    <!--<field name="so_nguoi_nhan_dan" attrs="{'readonly':[('state','!=','draft')]}" />-->
+    <!--<field name="so_nguoi_tre_em" attrs="{'readonly':[('state','!=','draft')]}" />-->
+    <!--<field name="tong_so_nguoi" attrs="{'readonly':[('state','!=','draft')]}" />-->
+    <!--</group>-->
+    <!--</group>-->
+    <!--</sheet>-->
+    <!--</form>-->
+    <!--</field>-->
+    <!--</record>-->
+</odoo>
