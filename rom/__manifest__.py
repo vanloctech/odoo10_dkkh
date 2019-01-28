@@ -9,6 +9,7 @@
         "rom_base"
     ],
     "data": [
+        "report/report.xml",
         "views/menu.xml",
         "views/rom.xml",
     ],
