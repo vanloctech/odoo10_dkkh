@@ -14,6 +14,7 @@ from datetime import time
 
 class rom(models.Model):
     _name = "rom.dkkh"
+    _rec_name = 'so'
 
     @api.model
     def _default_date_now(self):
@@ -54,6 +55,17 @@ class rom(models.Model):
     noiThuongTruVo = fields.Char("Nơi thường trú", required=True)
     ngayCongNhan = fields.Date("Ngày quan hệ hôn nhân được công nhận", default=_default_date_now, required=True)
 
+    #report field 
+    cu_date_get = fields.Text(string='Ngay', compute='get_cur_date')
+    def get_cur_date(self):
+        re = ''
+        if datetime.now().day != False:
+            currentDay = datetime.now().day
+            currentMonth = datetime.now().month
+            currentYear = datetime.now().year
+            re = "Ngày " + str(currentDay) + " tháng " + str(currentMonth) + " năm " + str(currentYear)
+        self.cu_date_get = re
+
     # def name_get(self, cr, uid, context=None):
     #     if context is None:
     #         context = {}
@@ -66,27 +78,23 @@ class rom(models.Model):
     #     res = self.pool.get('rom.dantoc').search(cr, uid, [('danTocChong', '=', 'Kinh')], context=context)
     #     return res and res[0] or False
 
-    # def get_name(self, cr, uid, ids, context=None):
-    #     if context is None:
-    #         context = {}
-    #     if isinstance(ids, (int, int)):
-    #         ids = [ids]
-    #     res = []
-    #     for record in self.browse(cr, uid, ids, context=context):
-    #         name = record.name
-    #         res.append(record.id, name + " - ahihi")
-    #     return res
 
-    @api.model
+    #day ne anh
+    #luc trua a Duong keu em thay thanh api.one thu
+    @api.multi
     def get_year(self):
-        return self.ngayCongNhan.strftime("%Y")
+        for record in self:
+            return "test"
+        #return self.ngayCongNhan.strftime("%Y")
 
+    @api.one
     def get_month(self):
         return self.ngayCongNhan.month
 
-    @api.onchange('danTocChong')
-    def _onchange_dan_toc_chong(self):
-        self.name = self.danTocChong.name
+    # @api.onchange('danTocChong')
+    # def _onchange_dan_toc_chong(self):
+    #     self.name = self.danTocChong.name
+    #     raise ValidationError(_('New name %s') % self.danTocChong.name)
 
     @api.multi
     def print_report(self):

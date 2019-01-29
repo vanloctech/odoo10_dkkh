@@ -7,7 +7,7 @@
       <field name="model">rom.dkkh</field>
       <field name="report_name">rom_py3o_docx</field>
       <field name="report_type">py3o</field>
-      <field name="py3o_filetype">doc</field>
+      <field name="py3o_filetype">pdf</field>
       <field name="module">rom</field>
       <field name="py3o_template_fallback">report/rom.odt</field>
     </record>
