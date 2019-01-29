@@ -9,6 +9,7 @@
                 <field name="hoTenChong"></field>
                 <field name="hoTenVo"></field>
                 <field name="ngayCongNhan"></field>
+                <!--<field name="get_year"></field>-->
             </tree>
         </field>
     </record>

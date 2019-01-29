@@ -9,6 +9,8 @@ from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
 from odoo.exceptions import UserError
 from odoo.tools.float_utils import float_round, float_compare, float_is_zero
 from datetime import datetime, timedelta
+from datetime import date
+from datetime import time
 
 class rom(models.Model):
     _name = "rom.dkkh"
@@ -74,6 +76,13 @@ class rom(models.Model):
     #         name = record.name
     #         res.append(record.id, name + " - ahihi")
     #     return res
+
+    @api.model
+    def get_year(self):
+        return self.ngayCongNhan.strftime("%Y")
+
+    def get_month(self):
+        return self.ngayCongNhan.month
 
     @api.onchange('danTocChong')
     def _onchange_dan_toc_chong(self):
